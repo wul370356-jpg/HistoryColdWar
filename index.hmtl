@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>冷战全史 | 超级大国对抗 · 详尽编年 | 灰白教学版 | 附高分论述范例</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e9ecef;  /* 灰白基调 */
+            color: #2c3e4e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #d1d5db; }
+        ::-webkit-scrollbar-thumb { background: #8b9a6e; border-radius: 10px; }
+
+        .nav-bar {
+            position: sticky; top: 0; z-index: 100;
+            background: #2c3e33e6; backdrop-filter: blur(10px);
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 0.6rem 1.2rem; padding: 0.7rem 1rem;
+            border-bottom: 1px solid #b9c2b2;
+        }
+        .nav-link {
+            color: #f0f3ea; text-decoration: none; font-weight: 500;
+            font-size: 0.85rem; transition: 0.2s; padding: 0.2rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active { color: #ffecb3; border-bottom-color: #ffecb3; }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 1.5rem 1.5rem 3rem; }
+        .hero {
+            background: #4a5b4e;  /* 灰绿色调 */
+            border-radius: 1.5rem; padding: 2rem;
+            margin-bottom: 2rem; color: white;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+        .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .hero p { font-size: 0.95rem; max-width: 80%; opacity: 0.9; }
+
+        .section-card {
+            background: #ffffff; border-radius: 1.2rem; margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;
+            border: 1px solid #d4dbce;
+        }
+        .section-header {
+            background: #f4f6f0; padding: 0.9rem 1.5rem;
+            border-bottom: 1px solid #e0e5d8;
+            display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem;
+        }
+        .section-icon { font-size: 1.5rem; color: #6a7c5e; }
+        .section-title { font-size: 1.4rem; font-weight: 700; color: #2e4a2f; margin-right: auto; }
+        .period { background: #e2e7db; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; color: #3a543a; }
+
+        .section-content { padding: 1.5rem; }
+        .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
+        .info-block {
+            background: #fefef9; border-left: 4px solid #8faa7b; padding: 0.9rem 1.2rem;
+            border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .info-block h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px; color: #415f3a; }
+        .treaty-box { background: #f3f6ee; padding: 0.8rem 1rem; border-radius: 1rem; margin: 0.8rem 0; border-left: 4px solid #9db37e; }
+        .badge-event { background: #e4e9de; display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-right: 0.4rem; color: #4d6942; }
+        .quote { font-style: italic; background: #f5f7f1; padding: 0.8rem 1.2rem; border-radius: 1rem; margin: 0.8rem 0; border-left: 4px solid #9bbf86; }
+        .timeline-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 1rem; overflow: auto; display: block; }
+        .timeline-table th, .timeline-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #e2e7da; text-align: left; vertical-align: top; font-size: 0.85rem; }
+        .event-year { font-weight: 700; width: 95px; color: #6f5b3e; }
+        .quiz-item { background: #fefef8; border: 1px solid #dee4d6; border-radius: 1.2rem; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+        .quiz-question { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.6rem; color: #2f4d2d; }
+        .quiz-options { list-style: none; padding-left: 0.5rem; margin: 0.4rem 0; }
+        .quiz-options li { margin: 0.3rem 0; font-size: 0.85rem; display: flex; align-items: baseline; gap: 6px; }
+        .answer-btn { background: #e2e8da; border: none; border-radius: 40px; padding: 0.2rem 1rem; font-size: 0.7rem; font-weight: 500; cursor: pointer; margin-top: 0.5rem; }
+        .answer-btn:hover { background: #ccd8be; }
+        .answer-text { display: none; margin-top: 0.6rem; background: #eef3e6; padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.8rem; color: #2e6b2f; border-left: 3px solid #8fb06b; }
+        .answer-text.show { display: block; }
+
+        /* 论述题样式 */
+        .essay-card {
+            background: #ffffff; border-radius: 1.2rem; margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); overflow: hidden;
+            border: 1px solid #d4dbce;
+        }
+        .essay-header {
+            background: #f0f2ea; padding: 0.9rem 1.5rem;
+            border-bottom: 1px solid #e0e5d8;
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        .essay-header i { font-size: 1.3rem; color: #6a7c5e; }
+        .essay-header h3 { font-size: 1.2rem; font-weight: 700; color: #2e4a2f; margin: 0; }
+        .essay-content {
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #2c3e4e;
+        }
+        .essay-content p { margin-bottom: 0.8rem; text-align: justify; }
+
+        footer { text-align: center; padding: 1.5rem; color: #6c7a62; border-top: 1px solid #dbe1d2; margin-top: 1rem; font-size: 0.75rem; }
+
+        @media (max-width: 700px) { .container { padding: 1rem; } .hero p { max-width: 100%; } .section-title { font-size: 1.2rem; } }
+        .animate-on-scroll { opacity: 0; transform: translateY(12px); transition: opacity 0.5s, transform 0.4s; }
+        .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+<div class="nav-bar">
+    <a href="#causes" class="nav-link">📖 成因</a>
+    <a href="#phase1" class="nav-link">⚔️ 初起期</a>
+    <a href="#phase2" class="nav-link">🌏 蔓延期</a>
+    <a href="#phase3" class="nav-link">🍃 緩和期</a>
+    <a href="#phase4" class="nav-link">❄️ 再起期</a>
+    <a href="#phase5" class="nav-link">🕊️ 結束期</a>
+    <a href="#treaties" class="nav-link">📜 條約年表</a>
+    <a href="#timeline" class="nav-link">📅 全事件表</a>
+    <a href="#essays" class="nav-link">📝 高分論述</a>
+    <a href="#quiz" class="nav-link">✍️ 困難測驗</a>
+</div>
+
+<div class="container">
+    <div class="hero animate-on-scroll">
+        <h1><i class="fas fa-globe-americas"></i> 冷戰 · 意識形態的冰封對決</h1>
+        <p>1946–1991 | 資本主義與共產主義陣營全面對抗：軍備競賽、代理人戰爭、核威懾、太空競爭。整合K.W.HO筆記、完整年表及高分論述範例，灰白簡約·深度學習。</p>
+    </div>
+
+    <!-- ================= 冷战成因（详细） ================= -->
+    <div class="section-card animate-on-scroll" id="causes">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-balance-scale"></i></div><div class="section-title">冷戰的成因｜四大核心矛盾</div><div class="period">意識形態·歷史創傷·利益衝突·權力真空</div></div>
+        <div class="section-content">
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-fist-raised"></i> 一、思想意識形態的不可調和</h3><p>美國資本主義：自由市場、多黨民主、個人自由；蘇聯共產主義：計劃經濟、一黨專政、階級鬥爭。雙方視對方為生存威脅，杜魯門主義與布里茲尼夫主義均體現意識形態對抗。</p><div class="quote">「從波羅的海的斯德丁到亞得里亞海的的里雅斯特，一道鐵幕已經落下。」——邱吉爾，1946</div></div>
+                <div class="info-block"><h3><i class="fas fa-history"></i> 二、蘇聯與西方長期互不信任（1917-1945）</h3><p><strong>蘇聯的猜忌：</strong>1918-1921西方干預俄國內戰；1938年慕尼黑會議排斥蘇聯；二戰期間英美延遲開闢第二戰場；1945年美國隱瞞原子彈技術。<br/><strong>西方的猜忌：</strong>1939年《蘇德互不侵犯條約》；戰後蘇聯在東歐建立衛星國，違背民主選舉承諾（波蘭、羅馬尼亞）。</p></div>
+                <div class="info-block"><h3><i class="fas fa-handshake"></i> 三、戰時會議的利益衝突</h3><p><strong>雅爾達會議(1945.2)</strong>：史太林要求東歐作為緩衝區，西方主張自由選舉，妥協埋下分歧。<br/><strong>波茨坦會議(1945.7-8)</strong>：杜魯門強硬對待蘇聯，德國賠償問題無共識，原子彈秘密加劇不信任。</p></div>
+                <div class="info-block"><h3><i class="fas fa-chart-line"></i> 四、二戰後權力結構劇變</h3><ul><li>歐洲衰落，英法德日無力維持秩序。</li><li>美蘇成為超級大國：美國擁有核壟斷與最強經濟；蘇聯擁有600萬軍隊，5萬輛坦克及2萬架戰鬥機。</li><li>1947年杜魯門主義標誌美國放棄孤立主義，正式遏制蘇聯。</li></ul></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 阶段1：初起期 1946-1949（详尽事件+条约） ================= -->
+    <div class="section-card animate-on-scroll" id="phase1">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-bolt"></i></div><div class="section-title">第一階段 · 冷戰初起</div><div class="period">1946–1949</div></div>
+        <div class="section-content">
+            <p><span class="badge-event">1946 鐵幕演說</span> 邱吉爾在富爾頓發表演說，指責蘇聯在歐洲拉起「鐵幕」，冷戰序幕正式拉開。</p>
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-hand-holding-usd"></i> 經濟對抗</h3><p><strong>杜魯門主義(1947)</strong>：美國提供4億美元援助希臘、土耳其抗共，確立圍堵政策。<br/><strong>馬歇爾計劃(1947-51)</strong>：130億美元援助西歐復興，成立OEEC。蘇聯推出莫洛托夫計劃(1947-49)，1949年成立經濟互助委員會(COMECON)加強對東歐經濟控制，歐洲經濟分裂。</p></div>
+                <div class="info-block"><h3><i class="fas fa-shield-alt"></i> 軍事盟約</h3><p><strong>布魯塞爾條約(1948)</strong>：英、法、荷、比、盧簽署集體防禦。<br/><strong>北約成立(1949.4)</strong>：柏林危機期間成立，集體防禦第五條款，刺激1955年華約成立。<br/><strong>柏林危機(1948-49)</strong>：蘇聯封鎖西柏林，美英空運成功，導致德國分裂為東德與西德。</p></div>
+                <div class="info-block"><h3><i class="fas fa-globe"></i> 地區性戰爭</h3><p><strong>希臘內戰(1944-49)</strong>：美國杜魯門主義援助希臘政府，擊敗共產游擊隊。<br/><strong>中國內戰(1946-49)</strong>：蘇聯移交日軍武器予中共，美國援助國民黨，中共勝利，國民黨敗退台灣。</p></div>
+            </div>
+            <div class="treaty-box"><i class="fas fa-scroll"></i> <strong>關鍵條約與影響</strong>：1947年《巴黎和約》鞏固東歐；1949年《北大西洋公約》—冷戰軍事同盟基石；德國分裂成為歐洲分裂象徵。</div>
+        </div>
+    </div>
+
+    <!-- ================= 阶段2：蔓延期 1949-1960s（涵盖韩战、U2、柏林墙、古巴危机、越战） ================= -->
+    <div class="section-card animate-on-scroll" id="phase2">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-globe-asia"></i></div><div class="section-title">第二階段 · 冷戰蔓延</div><div class="period">1949–1960s中期</div></div>
+        <div class="section-content">
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-bomb"></i> 亞洲熱戰</h3><p><strong>韓戰(1950-53)</strong>：蘇聯施壓中國出兵，聯合國軍介入，1953年停戰協定，朝鮮半島分裂。<br/><strong>越戰(1961-75)</strong>：美國深陷泥潭，引發反戰浪潮，1973年《巴黎和平協約》美軍撤出，1975年北越統一，促使美國轉向尼克森主義。</p></div>
+                <div class="info-block"><h3><i class="fas fa-fence"></i> 歐洲危機</h3><p><strong>U-2擊墜事件(1960)</strong>：美國偵察機遭蘇聯擊落，原定高峰會議告吹，美蘇關係急轉直下。<br/><strong>柏林圍牆興建(1961)</strong>：東德為阻止人民逃往西柏林修建圍牆，成為冷戰象徵。</p></div>
+                <div class="info-block"><h3><i class="fas fa-radar"></i> 古巴導彈危機(1962)</h3><p>蘇聯在古巴部署導彈反制美國在土耳其部署導彈，美國封鎖古巴，核戰一觸即發。最後蘇聯撤除導彈，美國承諾不入侵古巴。事後建立美蘇熱線，1963年簽訂《部分禁止核試驗條約》。</p></div>
+                <div class="info-block"><h3><i class="fas fa-rocket"></i> 軍備競賽</h3><p>1949蘇聯試爆原子彈；1952美國氫彈；1957蘇聯發射首顆人造衛星；1958美國發射衛星；1959美國開始在意大利、土耳其部署導彈。</p></div>
+            </div>
+            <div class="treaty-box"><i class="fas fa-file-signature"></i> <strong>重要條約</strong>：1963年《部分禁止核試驗條約》—首個核軍控；1968年《不擴散核武器條約》(NPT)開放簽署，防止核武擴散。</div>
+        </div>
+    </div>
+
+    <!-- ================= 阶段3：缓和期 1968-1979（SALT、赫尔辛基、互访） ================= -->
+    <div class="section-card animate-on-scroll" id="phase3">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-handshake"></i></div><div class="section-title">第三階段 · 低溫緩和</div><div class="period">1968–1979</div></div>
+        <div class="section-content">
+            <p><span class="badge-event">Détente</span> 背景：越戰教訓、軍費壓力、尼克森主義（不直接干涉政策）。</p>
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-file-signature"></i> 限制戰略武器談判</h3><p><strong>SALT I (1972)</strong>：簽署《反彈道導彈條約》及臨時協議，限制核武數量。<br/><strong>SALT II (1979)</strong>：進一步限制戰略武器，但蘇聯入侵阿富汗後美國擱置批准。</p></div>
+                <div class="info-block"><h3><i class="fas fa-church"></i> 赫爾辛基協定(1975)</h3><p>北約、華約及中立國簽署，確認歐洲邊界不可侵犯，承諾尊重人權，成為東歐異議運動依據。</p></div>
+                <div class="info-block"><h3><i class="fas fa-people-arrows"></i> 領導人互訪與高峰會</h3><p>1972尼克森訪蘇；1973布里茲涅夫訪美；1975美蘇聯合太空任務；1959年赫魯曉夫訪美、尼克森訪蘇。</p></div>
+                <div class="info-block"><h3><i class="fas fa-china-timeline"></i> 中美關係破冰</h3><p>1972尼克森訪華，1979中美建交，三角外交制衡蘇聯。</p></div>
+            </div>
+            <div class="treaty-box"><i class="fas fa-handshake"></i> 緩和期成果：SALT I、ABM條約、赫爾辛基最後文件、美蘇領導人頻繁互訪，冷戰緊張降至二戰後最低點。</div>
+        </div>
+    </div>
+
+    <!-- ================= 阶段4：再起期 1979-1985（阿富汗、星战、波蘭） ================= -->
+    <div class="section-card animate-on-scroll" id="phase4">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-snowplow"></i></div><div class="section-title">第四階段 · 冷戰再起</div><div class="period">1979–1985</div></div>
+        <div class="section-content">
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-mosque"></i> 蘇聯入侵阿富汗(1979)</h3><p>蘇軍入侵阿富汗鎮壓反抗，美國抵制1980莫斯科奧運，提供聖戰者武器。卡特主義宣布將以武力保衛波斯灣，緩和終結。</p></div>
+                <div class="info-block"><h3><i class="fas fa-users"></i> 波蘭團結工會(1980)</h3><p>波蘭工人運動興起，美國制裁蘇聯，波蘭實施戒嚴，東歐內部動盪加劇。</p></div>
+                <div class="info-block"><h3><i class="fas fa-satellite-dish"></i> 星戰計劃(SDI,1983)</h3><p>里根提出戰略防禦倡議，以太空科技拖垮蘇聯經濟，新一輪軍備競賽。</p></div>
+                <div class="info-block"><h3><i class="fas fa-chart-line"></i> 軍備競賽升溫</h3><p>北約雙重決議(1979)部署中程導彈；美國大幅增加國防開支，蘇聯被迫跟進，經濟負擔沉重。</p></div>
+            </div>
+            <div class="treaty-box"><i class="fas fa-rocket"></i> 冷戰再起標誌：蘇聯入侵阿富汗、星戰計劃、美蘇關係降至冰點。</div>
+        </div>
+    </div>
+
+    <!-- ================= 阶段5：结束期 1985-1991（戈巴卓夫、中导条约、东欧剧变、八一九、苏联解体） ================= -->
+    <div class="section-card animate-on-scroll" id="phase5">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-hourglass-end"></i></div><div class="section-title">第五階段 · 冷戰終結</div><div class="period">1985–1991</div></div>
+        <div class="section-content">
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-user-tie"></i> 戈爾巴喬夫改革(1985-91)</h3><p>新思維、開放政策、削減軍費、停止干預東歐。1985年日內瓦首腦會議；1987年《中程導彈裁撤條約》(INF)，銷毀所有中程核導彈。</p></div>
+                <div class="info-block"><h3><i class="fas fa-euro-sign"></i> 東歐劇變(1989-91)</h3><p>波蘭團結工會執政；匈牙利開放邊界；柏林圍牆倒塌(1989)；1990年兩德統一；華沙公約組織1991年瓦解。</p></div>
+                <div class="info-block"><h3><i class="fas fa-flag-usa"></i> 蘇聯解體過程</h3><p>1991年八一九事變：傳統派政變軟禁戈巴卓夫，葉利欽成功阻止，政變失敗後戈巴卓夫權力大減。1991年12月，俄羅斯等11國成立獨立國家聯合體，戈巴卓夫辭職，蘇聯解體，冷戰終結。</p></div>
+                <div class="info-block"><h3><i class="fas fa-check-double"></i> 終結標誌</h3><p>1989馬爾他首腦會議宣佈冷戰結束；1990《歐洲常規裁軍條約》；1991年蘇聯解體。</p></div>
+            </div>
+            <div class="treaty-box"><i class="fas fa-check-double"></i> 冷戰結束因素：戈巴卓夫上台、蘇聯經濟問題、東歐不滿、西方軍事策略（星戰計劃）共同作用。</div>
+        </div>
+    </div>
+
+    <!-- ================= 演说与主义 模块 ================= -->
+    <div class="section-card animate-on-scroll">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-microphone-alt"></i></div><div class="section-title">關鍵演說與主義</div><div class="period">思想對抗的旗幟</div></div>
+        <div class="section-content">
+            <div class="grid-2col">
+                <div class="info-block"><h3><i class="fas fa-chalkboard"></i> 1946 鐵幕演說</h3><p>邱吉爾批評蘇聯分隔東、西歐，呼籲英美合作遏制共產主義。</p></div>
+                <div class="info-block"><h3><i class="fas fa-chalkboard"></i> 1947 杜魯門主義</h3><p>美國擔當「世界警察」，遏止共產主義擴張。</p></div>
+                <div class="info-block"><h3><i class="fas fa-chalkboard"></i> 1957 艾森豪主義</h3><p>美國對中東進行經濟及軍事援助，填補英法勢力衰退，抗衡蘇聯擴張。</p></div>
+                <div class="info-block"><h3><i class="fas fa-chalkboard"></i> 1969 布里茲尼夫主義</h3><p>蘇聯加強對東歐國家的控制，干涉衛星國內政。</p></div>
+                <div class="info-block"><h3><i class="fas fa-chalkboard"></i> 1980 卡特主義</h3><p>美國將以武力擊退任何企圖控制波斯灣的外來勢力。</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 关键条约与裁军列表 ================= -->
+    <div class="section-card animate-on-scroll" id="treaties">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-file-contract"></i></div><div class="section-title">冷戰關鍵條約與裁軍協議</div><div class="period">軍控·和平·核威懾</div></div>
+        <div class="section-content">
+            <div class="timeline-table">
+                <table style="width:100%">
+                    <thead><tr><th>條約名稱</th><th>年份</th><th>核心內容與影響</th></tr></thead>
+                    <tbody>
+                        <tr><td>《部分禁止核試驗條約》</td><td>1963</td><td>禁止大氣層、水下、外太空核試，美蘇英簽署，緩和核競賽。</td></tr>
+                        <tr><td>《不擴散核武器條約》(NPT)</td><td>1968</td><td>防止核武擴散，促進裁軍，奠定國際核秩序。</td></tr>
+                        <tr><td>SALT I / ABM條約</td><td>1972</td><td>限制反彈道導彈系統，凍結戰略武器數量，緩和期核心。</td></tr>
+                        <tr><td>SALT II</td><td>1979</td><td>進一步限制戰略武器，因蘇聯入侵阿富汗未生效。</td></tr>
+                        <tr><td>《中程導彈條約》(INF)</td><td>1987</td><td>銷毀500-5500公里陸基導彈，首次徹底銷毀一類核武器。</td></tr>
+                        <tr><td>《歐洲常規裁軍條約》</td><td>1990</td><td>限制歐洲常規武裝力量，冷戰結束前重要裁軍。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 完整事件年表（41項+） ================= -->
+    <div class="section-card animate-on-scroll" id="timeline">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-timeline"></i></div><div class="section-title">冷戰重大事件與條年表（1944-1991）</div><div class="period">完整編年·關鍵節點</div></div>
+        <div class="section-content">
+            <div class="timeline-table">
+                <table style="width:100%">
+                    <thead><tr><th>年份</th><th>事件</th><th>影響/備註</th></tr></thead>
+                    <tbody>
+                        <tr><td class="event-year">1944-49</td><td>希臘內戰</td><td>杜魯門主義援助，共產勢力失敗。</td></tr>
+                        <tr><td>1946</td><td>鐵幕演說</td><td>冷戰序幕。</td></tr>
+                        <tr><td>1947</td><td>杜魯門主義／馬歇爾計劃</td><td>圍堵政策、歐洲經濟復興。</td></tr>
+                        <tr><td>1948-49</td><td>柏林危機／空運</td><td>德國分裂。</td></tr>
+                        <tr><td>1949</td><td>北約成立／蘇聯試爆原子彈</td><td>軍事同盟形成，核壟斷打破。</td></tr>
+                        <tr><td>1949</td><td>中華人民共和國成立</td><td>亞洲共產陣營擴大。</td></tr>
+                        <tr><td>1950-53</td><td>韓戰</td><td>停戰協定，朝鮮分裂。</td></tr>
+                        <tr><td>1952</td><td>美國氫彈試驗成功</td><td>核武升級。</td></tr>
+                        <tr><td>1955</td><td>華沙公約組織成立／日內瓦高峰會</td><td>歐洲軍事對峙固化。</td></tr>
+                        <tr><td>1956</td><td>匈牙利革命／蘇伊士運河戰爭</td><td>蘇聯鎮壓匈牙利，美蘇中東博弈。</td></tr>
+                        <tr><td>1957</td><td>蘇聯發射首顆人造衛星</td><td>太空競賽開始。</td></tr>
+                        <tr><td>1959</td><td>美蘇領導人互訪（赫魯曉夫訪美）</td><td>短暫解凍。</td></tr>
+                        <tr><td>1960</td><td>U-2擊墜事件</td><td>高峰會議取消，關係惡化。</td></tr>
+                        <tr><td>1961</td><td>柏林圍牆興建</td><td>冷戰象徵。</td></tr>
+                        <tr><td>1961-75</td><td>越戰</td><td>美國失利，反戰浪潮。</td></tr>
+                        <tr><td>1962</td><td>古巴導彈危機</td><td>核戰邊緣，建立熱線。</td></tr>
+                        <tr><td>1963</td><td>《部分禁止核試驗條約》</td><td>首次核軍控。</td></tr>
+                        <tr><td>1968</td><td>布拉格之春／NPT簽署</td><td>蘇聯鎮壓改革，核不擴散體系。</td></tr>
+                        <tr><td>1972</td><td>SALT I / 尼克森訪蘇</td><td>緩和高峰。</td></tr>
+                        <tr><td>1975</td><td>赫爾辛基協定／美蘇聯合太空任務</td><td>邊界確認，人權條款。</td></tr>
+                        <tr><td>1979</td><td>蘇聯入侵阿富汗／SALT II簽署</td><td>緩和終結，冷戰再起。</td></tr>
+                        <tr><td>1983</td><td>星戰計劃(SDI)</td><td>軍備競賽升溫。</td></tr>
+                        <tr><td>1985</td><td>戈爾巴喬夫上台</td><td>改革開始。</td></tr>
+                        <tr><td>1987</td><td>《中程導彈條約》</td><td>核裁軍突破。</td></tr>
+                        <tr><td>1989</td><td>柏林圍牆倒塌／馬爾他首腦會議</td><td>東歐劇變，冷戰結束宣示。</td></tr>
+                        <tr><td>1990</td><td>兩德統一／《歐洲常規裁軍條約》</td><td>德國問題終結。</td></tr>
+                        <tr><td>1991</td><td>八一九事變／華約解散／蘇聯解體</td><td>冷戰正式終結。</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 新增：高分论述范例（两篇） ================= -->
+    <div class="animate-on-scroll" id="essays">
+        <div class="essay-card">
+            <div class="essay-header">
+                <i class="fas fa-pen-fancy"></i>
+                <h3>📌 典型题目解析：美国在冷战中担当了什么角色？试解释你的答案。</h3>
+            </div>
+            <div class="essay-content">
+                <p>冷戰是資本主義陣營與共產主義陣營之間的鬥爭，其中，美國作為資本主義陣營的領袖，其於冷戰中擔當了意義重大的角色。以下，將會從政治、經濟及軍事方面探討美國在冷戰中所擔當的角色。</p>
+                <p><strong>其一，政治方面，美國作為資本主義陣營的領袖以對抗共產主義。</strong>自英國於1946年發表「鐵幕演說」，認為美國需要負重任以抵抗共產主義後，美國的領袖角色就得以確立，如1947年美國總統杜魯門發表的「杜魯門主義」，提出美國需要作為「世界警察」的角色。及後，在1957年時，艾森豪發表「艾森豪主義」，提出美國需要彌補因英、法衰弱而令中東地區勢力真空的情況，反映美國的角色愈見重要。此外，美國也組成軍事同盟，如1949年成立的北大西洋公約組織中，美國便扮演了領袖的角色，聯合其他資本主義國家以抗衡共產主義陣營。可見，美國作為資本主義陣營的領袖，積極捍衛資本主義世界的安全和穩定。</p>
+                <p><strong>其二，政治方面，美國在冷戰期間是衝突的挑起者。</strong>冷戰的對立形勢及意識形態的差異使美國與蘇聯易生摩擦，引起衝擊，如1948年時，美國與英、法計劃合併在德國的佔領區，隨即引起蘇聯的抗議，並且封鎖柏林，導致「柏林危機」，引起衝突的發生。此外，在1960年時，美國派U-2型偵察機到蘇聯領空偵察，最終卻被蘇聯擊落，也導致了「U-2擊墜事件」，使美、蘇關係再次惡化。再者，美國早於1959年時已開始在土耳其及意大利建立針對蘇聯的導彈基地，這也使蘇聯作出還擊，於1962年試圖在古巴建立導彈基地，使「古巴導彈危機」出現，大戰幾乎一觸即發。可見，美國的行動或政策引起蘇聯的不滿，導致衝突出現，是衝突的挑起者。</p>
+                <p><strong>其三，政治方面，美國在衝突挑起者的同時，也是緩和的嘗試者。</strong>美國有為緩和冷戰的緊張局勢作出努力，分別舉行了和平會議、進行外訪及簽訂裁軍條約。在和平會議方面，美國與共產主義的蘇聯舉行了日內瓦會議（1955年）及赫爾辛基會議（1975年），美國與蘇聯討論和平共存及相互尊重的議題，至1989年的馬爾他會議，美國更與蘇聯共同宣佈冷戰的結束。此外，美國領導層也多次訪問蘇聯，如1959年美國副總統尼克遜訪問蘇聯、1972年成為總統的尼克遜再次訪蘇聯等，有助緩和冷戰的局勢。再者，美國也與蘇聯簽訂多條裁軍條約，如1963年《禁止核試驗條約》、1968年《核不擴散條約》、1987年《中程導彈截擊條約》、1990年《歐洲常規裁軍條約》，為熾熱的軍備競賽形勢降温。可見，以上乃美國作出的努力，其目的在於希望緩和冷戰的形勢，以避免衝突及戰爭爆發。</p>
+                <p><strong>其四，經濟方面，美國作為援助國，為資本主義國家提供金錢援助。</strong>美國為抗衡共產主義在世界各地的擴張，因此大力為其他資本主義國家提供經濟援助，如在希臘及土耳其方面，在1947年美國總統杜魯門發表杜魯門主義，要求美國撥款4億美元援助兩國，以戰勝當地的共產主義勢力。在西歐方面，美國也於1948年推出馬歇爾計劃，提供130億美元的經濟援助予西歐，以避免差劣的經濟環境成為共產主義滋長的溫床。此外，在日本方面，美國提供約20億美元的援助予日本，積極協助日本重建國力，以圍堵共產主義在亞洲的擴張。可見，美國積極提供經濟援助予不同的國家，以協助這些國家復興國力，以共同圍堵及抗衡共產主義的擴張，於冷戰時期扮演了經濟援助國的角色。</p>
+                <p><strong>其五，軍事方面，美國在冷戰期間是軍備競賽的參與國。</strong>美國為維持其在軍事上的勢力優勢，不斷積極擴軍，成為冷戰中與蘇聯進行軍備競賽的主要對手，例如蘇聯在1949年成功試爆原子彈後，美國加緊研究氫氣彈，並成功於1952年成功研發。及後，當1957年蘇聯成功發射首個人造衛星後，美國也不遑多讓，於次年也成功試爆。及至1970年代，隨著蘇聯在核武的數量上開始超越美國，美國進一步研究太空作戰計劃，與多個北约成員國提出「星戰計劃」（1983年），結果掀起了與蘇聯的新一輪太空軍備競賽。可見，美國是冷戰中軍備競賽的參與者，積極與蘇聯進行競賽。</p>
+                <p><strong>其六，軍事方面，美國是地區性競爭的介入者。</strong>美國為防止共產主義勢力在全球各地建立起政權，因此在地區性競爭上為共產主義的敵對派別提出軍事援助，例如在國內內戰（1946-49年）中，美國提供軍備上的援助予國民黨，而在國民黨敗走台灣後，也派軍艦在台灣海峽附近防止共產黨攻台。此外，在韓戰（1950-53年）中，美國於聯合國中支持派遣和平部隊協助南韓以抵禦北韓的入侵，其中聯合國維和部隊的主要軍力便是由美國所支撐。再者，在越戰（1961-75年）中，美軍的參戰人數更高達300萬人，以防止共產主義建立越南。可見，美國積極介入地區性戰爭，以防止共產主義派別取得勝利，是地區性戰爭的介入者。</p>
+                <p><strong>總結而言，</strong>美國是冷戰期間資本主義的領袖，其在政治、經濟、軍事等各方面扮演了積極且重要的角色，塑造出冷戰衝突與緩和交疊的多階段發展。</p>
+            </div>
+        </div>
+
+        <div class="essay-card">
+            <div class="essay-header">
+                <i class="fas fa-star-of-life"></i>
+                <h3>📌 典型题目解析：1946-80年間冷戰的發展是由美國所扮演的角色主導。你在多大程度上同意此說？</h3>
+            </div>
+            <div class="essay-content">
+                <p>就1946至1980年間冷戰的發展而言，我很大程度上同意「美國所扮演的角色主導了冷戰發展」這一說法。美國在冷戰中分別擔當了資本主義陣營領袖、經濟援助國、衝突挑起者以及緩和嘗試者的角色。這些角色不僅確立了冷戰初期的兩極對抗格局，更牽引著冷戰局勢的升溫與緩和。以下將詳細分析。</p>
+                <p><strong>首先，在冷戰初期，美國作為資本主義陣營的領袖與經濟援助國，其角色主導了冷戰防線的成形。</strong>1947年，美國提出杜魯門主義，以承擔防衛責任的姿態確立了圍堵政策；隨後推行馬歇爾計劃，向西歐提供巨額經濟援助，以防範共產主義的滋長的溫床。在亞洲方面，美國亦提供約20億美元援助日本重建國力。軍事上，美國於1949年牽頭成立北大西洋公約組織。可見，美國透過龐大的經濟與軍事支援，成功凝聚並主導了整個資本主義陣營的對抗基礎，主導了初期的冷戰發展。</p>
+                <p><strong>其次，在冷戰危機中，美國作為衝突挑起者與參與者的角色，主導了局勢的升溫與惡化。</strong>冷戰對立形勢使美蘇易生摩擦，而美國的行動往往是危機的導火線。1948年，美國與英、法計劃合併德國佔領區，此舉直接引發蘇聯抗議並導致第一次柏林危機。1960年美國派U-2偵察機飛越蘇聯領空，以及早於1959年在土耳其及意大利建立針對蘇聯的導彈基地，更是直接刺激蘇聯在古巴部署導彈，引爆1962年的古巴導彈危機。這些史實反映，美國的強硬佈局與前瞻性行動，往往是引發並主導冷戰重大衝突的關鍵因素。</p>
+                <p><strong>再者，在冷戰的蔓延期，美國作為地區性戰爭的介入者，主導了冷戰戰場向全球擴張的軌跡。</strong>為防止共產主義勢力在各地建立政權，美國積極介入地區性戰爭。在1950至1953年的韓戰中，美國主導聯合國軍隊支援南韓抵禦北韓入侵。其後在1961至1975年的越戰中，美軍參戰人數更高達三百萬人。這反映美國為了實踐其圍堵政策，主動將冷戰的熱戰化延伸至亞洲，其介入者的角色深刻地主導了冷戰蔓延的走向。</p>
+                <p><strong>此外，到了1970年代，美國作為緩和嘗試者的角色，同樣主導了冷戰局勢的降温。</strong>美國為緩和緊張局勢作出努力，透過首腦互訪及簽訂條約來引導緩和進程。1959年美國副總統尼克遜訪蘇，以及1972年成為總統後再次訪蘇並訪華，積極打破外交僵局。兩國更簽署了1968年的《核不擴散條約》及1972年的《第一階段限制戰略武器條約》，為熾熱的軍備競賽降温。同時，美國亦參與了1975年的赫爾辛基會議。可見，美國在外交上的主動出擊，成功主導了冷戰從高度對抗走向緩和的過渡。</p>
+                <p><strong>無可否認，在很小程度上，美國的角色亦有其局限，未能完全主導所有發展。</strong>美國在冷戰期間是軍備競賽的參與國，但蘇聯於1949年成功試爆原子彈，及後於1957年成功發射首個人造衛星，在核武及太空領域一度打破美國的壟斷。此外，美國在越戰中最終敗退撤軍，亦顯示其世界警察角色在第三世界面臨重大挫折，未能單方面掌控戰局。然而，上述局限並不能推翻美國主導大局的核心。儘管蘇聯在軍備上帶來挑戰，但美國始終能迅速整合資源並維持勢均力敵的核威嚇力。</p>
+                <p><strong>整體而言，</strong>從確立圍堵陣營、引發關鍵危機、推展地區爭到促成外交緩和，美國所扮演的多重角色一直牽引著冷戰三十多年的發展節奏。總括而言，我很大程度上同意美國的角色主導了1946至1980年間的冷戰發展。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 20道高难度选择题 ================= -->
+    <div class="section-card animate-on-scroll" id="quiz">
+        <div class="section-header"><div class="section-icon"><i class="fas fa-question-circle"></i></div><div class="section-title">冷戰高難度測驗 (20題)</div><div class="period">深層因果·條約細節·關鍵轉折</div></div>
+        <div class="section-content" id="quiz-container"></div>
+    </div>
+
+    <footer><i class="far fa-copyright"></i> 整合K.W.HO筆記與完整史實 | 灰白教學版 | 冷戰五階段·成因·條約·年表·測驗·高分論述範例</footer>
+</div>
+
+<script>
+    const quizData = [
+        {q:"1. 1948年柏林危機的直接導火線是？", opts:["A) 蘇聯封鎖西柏林","B) 西方國家在柏林佔領區推行貨幣改革","C) 北約成立","D) 馬歇爾計劃實施"], ans:"B) 西方國家在柏林佔領區推行貨幣改革（英、美、法合併佔領區並發行新馬克，蘇聯封鎖作為回應）。"},
+        {q:"2. 哪一條約首次銷毀一類核武器，被視為核裁軍里程碑？", opts:["A) SALT I","B) 《部分禁止核試驗條約》","C) 《中程導彈條約》(INF)","D) 《不擴散核武器條約》"], ans:"C) 《中程導彈條約》(INF) 銷毀所有陸基中程導彈。"},
+        {q:"3. 古巴導彈危機後，美蘇建立的直接溝通機制是？", opts:["A) 日內瓦熱線","B) 莫斯科-華盛頓熱線","C) 聯合國緊急會議","D) 北約-華約聯絡處"], ans:"B) 莫斯科-華盛頓熱線。"},
+        {q:"4. 赫爾辛基協定(1975)對東歐的深遠影響是？", opts:["A) 解散華約","B) 人權條款成為東歐異議運動依據","C) 允許兩德統一","D) 美國撤出歐洲"], ans:"B) 人權條款成為東歐異議運動依據。"},
+        {q:"5. 尼克森主義(1969)的核心轉變是？", opts:["A) 全面孤立主義","B) 從直接軍事干預轉為提供援助，由當地國家承擔防衛責任","C) 與蘇聯全面對抗","D) 放棄圍堵政策"], ans:"B) 從直接軍事干預轉為提供援助，由當地國家承擔防衛責任。"},
+        {q:"6. 導致1970年代緩和(détente)終結的直接原因是？", opts:["A) 越戰結束","B) 蘇聯入侵阿富汗","C) 波蘭團結工會遭鎮壓","D) 北約部署中程導彈"], ans:"B) 蘇聯入侵阿富汗。"},
+        {q:"7. 「星戰計劃」(SDI)的主要戰略目的是？", opts:["A) 實際部署太空武器","B) 以高科技軍備競賽拖垮蘇聯經濟","C) 與蘇聯共同研發防禦系統","D) 立即結束冷戰"], ans:"B) 以高科技軍備競賽拖垮蘇聯經濟。"},
+        {q:"8. 戈爾巴喬夫的「新思維」外交不包括？", opts:["A) 削減軍備","B) 停止干預東歐","C) 擴大在阿富汗軍事行動","D) 與西方核裁軍談判"], ans:"C) 擴大在阿富汗軍事行動（實際撤軍）。"},
+        {q:"9. 1949年德國分裂為東德與西德的直接原因是？", opts:["A) 馬歇爾計劃","B) 柏林封鎖與西方國家的反應","C) 北約成立","D) 巴黎和會決議"], ans:"B) 柏林封鎖與西方國家的反應。"},
+        {q:"10. 哪一條約首次限制了美蘇戰略核武數量？", opts:["A) 《部分禁止核試驗條約》","B) SALT I (ABM條約及臨時協議)","C) 《中程導彈條約》","D) 《核不擴散條約》"], ans:"B) SALT I。"},
+        {q:"11. 韓戰停戰協定簽訂後，朝鮮半島的狀態是？", opts:["A) 南北韓統一","B) 維持停戰線，未簽署和平條約","C) 聯合國託管","D) 北韓占領全境"], ans:"B) 維持停戰線，未簽署和平條約。"},
+        {q:"12. 1968年《不擴散核武器條約》的核心缺陷之一是？", opts:["A) 未禁止核試驗","B) 未強制既有核國家裁軍，形成核壟斷合法性爭議","C) 只有美國簽署","D) 未限制核武生產"], ans:"B) 未強制既有核國家裁軍，形成核壟斷合法性爭議。"},
+        {q:"13. 美國抵制1980年莫斯科奧運會的原因是？", opts:["A) 古巴導彈危機","B) 蘇聯入侵阿富汗","C) 波蘭戒嚴","D) 越南戰爭"], ans:"B) 蘇聯入侵阿富汗。"},
+        {q:"14. 關於「柏林四國協定」(1971)，正確的是？", opts:["A) 解除柏林封鎖","B) 改善西柏林與西德的交通，降低對峙","C) 拆除柏林圍牆","D) 允許東德加入北約"], ans:"B) 改善西柏林與西德的交通，降低對峙。"},
+        {q:"15. 蘇聯解體的法律標誌事件是？", opts:["A) 八一九政變","B) 戈爾巴喬夫辭職與獨立國家聯合體成立","C) 葉利欽當選俄羅斯總統","D) 華沙公約解散"], ans:"B) 戈爾巴喬夫辭職與獨立國家聯合體成立。"},
+        {q:"16. 下列哪一項不是冷戰時期代理人戰爭？", opts:["A) 韓戰","B) 越戰","C) 阿富汗戰爭(1979-89)","D) 福克蘭戰爭"], ans:"D) 福克蘭戰爭 (英阿領土戰爭，非美蘇代理)。"},
+        {q:"17. 1955年華沙公約成立的直接原因是？", opts:["A) 北約接納西德","B) 柏林危機升級","C) 蘇聯試爆氫彈","D) 韓戰爆發"], ans:"A) 北約接納西德。"},
+        {q:"18. 哪一條約被視為冷戰正式結束的象徵性文件？", opts:["A) 《新歐洲巴黎憲章》(1990)","B) 《中程導彈條約》","C) 《赫爾辛基協定》","D) 《馬斯特里赫特條約》"], ans:"A) 《新歐洲巴黎憲章》(1990) 宣告冷戰終結。"},
+        {q:"19. 美國「圍堵政策」最早由誰提出理論框架？", opts:["A) 杜魯門","B) 邱吉爾","C) 喬治·凱南 (長電報)","D) 馬歇爾"], ans:"C) 喬治·凱南 (長電報)。"},
+        {q:"20. 關於冷戰結束的原因，下列何者最完整？", opts:["A) 戈爾巴喬夫改革","B) 蘇聯經濟困境","C) 東歐不滿與西方軍事壓力","D) 戈巴卓夫上台、蘇聯經濟問題、東歐不滿及西方軍事策略共同作用"], ans:"D) 戈巴卓夫上台、蘇聯經濟問題、東歐不滿及西方軍事策略共同作用。"}
+    ];
+    function buildQuiz(){
+        let html='';
+        quizData.forEach((item,idx)=>{
+            html+=`<div class="quiz-item"><div class="quiz-question">${item.q}</div><ul class="quiz-options">${item.opts.map(opt=>`<li>${opt}</li>`).join('')}</ul><button class="answer-btn" data-idx="${idx}">📖 顯示答案與解析</button><div class="answer-text" id="ans-${idx}">✅ ${item.ans}</div></div>`;
+        });
+        document.getElementById('quiz-container').innerHTML=html;
+        document.querySelectorAll('.answer-btn').forEach(btn=>{
+            btn.addEventListener('click',(e)=>{
+                let idx=btn.dataset.idx;
+                let ansDiv=document.getElementById(`ans-${idx}`);
+                ansDiv.classList.toggle('show');
+            });
+        });
+    }
+    buildQuiz();
+
+    // 滚动高亮与动画
+    const sections = document.querySelectorAll('.section-card, .hero, .essay-card');
+    const navLinks = document.querySelectorAll('.nav-link');
+    function updateActive(){
+        let current='';
+        const scrollPos=window.scrollY+100;
+        sections.forEach(sec=>{
+            let top=sec.offsetTop, bottom=top+sec.offsetHeight;
+            if(scrollPos>=top && scrollPos<bottom) current=sec.getAttribute('id');
+        });
+        navLinks.forEach(link=>{
+            link.classList.remove('active');
+            if(link.getAttribute('href')?.substring(1)===current) link.classList.add('active');
+        });
+    }
+    window.addEventListener('scroll',updateActive);
+    window.addEventListener('load',updateActive);
+    const animated=document.querySelectorAll('.animate-on-scroll');
+    const observer=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('animated');observer.unobserve(e.target);}});
+    },{threshold:0.1});
+    animated.forEach(el=>observer.observe(el));
+    setTimeout(()=>{animated.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-80) el.classList.add('animated');});},200);
+</script>
+</body>
+</html>
